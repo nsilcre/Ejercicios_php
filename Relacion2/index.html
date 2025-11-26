@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación 1 - Índice de Ejercicios</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">💻 Relación 2</a>
+            <form class="d-flex" role="search" id="searchForm" onsubmit="return false;">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar ejercicio..."
+                    aria-label="Search">
+                <button class="btn btn-outline-success" type="button" onclick="filtrarEjercicios()">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white text-center fw-bold">
+                        Índice de Ejercicios
+                    </div>
+                    <div class="list-group list-group-flush" id="lista-ejercicios">
+                        <a href="ej1.php" class="list-group-item list-group-item-action">Ejercicio 1</a>
+                        <a href="ej4.php" class="list-group-item list-group-item-action">Ejercicio 4</a>
+                        <a href="ej5.php" class="list-group-item list-group-item-action">Ejercicio 5</a>
+                        <a href="ej6.php" class="list-group-item list-group-item-action">Ejercicio 6</a>
+                        <a href="ej7.php" class="list-group-item list-group-item-action">Ejercicio 7</a>
+                        <a href="ej8.php" class="list-group-item list-group-item-action">Ejercicio 8</a>
+                        <a href="ej9.php" class="list-group-item list-group-item-action">Ejercicio 9</a>
+                        <a href="ej10_form.php" class="list-group-item list-group-item-action">Ejercicio 10</a>
+                        <a href="ej11.php" class="list-group-item list-group-item-action">Ejercicio 11</a>
+                        <a href="ej12_form.php" class="list-group-item list-group-item-action">Ejercicio 12</a>
+                        <a href="ej13.php" class="list-group-item list-group-item-action">Ejercicio 13</a>
+                        <a href="ej14.php" class="list-group-item list-group-item-action">Ejercicio 14</a>
+                        <a href="ej15.php" class="list-group-item list-group-item-action">Ejercicio 15</a>
+                        <a href="ej16.php" class="list-group-item list-group-item-action">Ejercicio 16</a>
+                        <a href="ej17.php" class="list-group-item list-group-item-action">Ejercicio 17</a>
+                        <a href="ej18.php" class="list-group-item list-group-item-action">Ejercicio 18</a>
+                        <a href="ej19_20.php" class="list-group-item list-group-item-action">Ejercicio 19</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        &copy; 2025 Relación de Ejercicios | Hecho con Bootstrap 💙
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script de filtrado -->
+    <script>
+        function filtrarEjercicios() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const ejercicios = document.querySelectorAll("#lista-ejercicios a");
+
+            ejercicios.forEach(ej => {
+                const texto = ej.textContent.toLowerCase();
+                ej.style.display = texto.includes(input) ? "block" : "none";
+            });
+        }
+
+        // Permitir filtrado en tiempo real al escribir
+        document.getElementById("searchInput").addEventListener("keyup", filtrarEjercicios);
+    </script>
+</body>
+
+</html>

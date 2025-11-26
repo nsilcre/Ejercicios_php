@@ -28,7 +28,7 @@
         echo "Temperaturas de la semana:<br>";
         echo "<ol>";
         foreach (TEMPERATURAS as $dia => $temp){
-            echo "<li>$dia: $temp °C<li>";
+            echo "<li>$dia: $temp °C</li>";
         }
         echo "</ol>";
 
